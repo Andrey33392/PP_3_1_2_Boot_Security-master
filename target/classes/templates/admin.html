@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+Hello Admin
+<button onclick="window.location.href = '/';">index</button>
+<table border="1">
+    <tr>
+        <th th:width="50">UserId</th>
+        <th th:width="120">Name</th>
+        <th th:width="120">Surname</th>
+        <th th:width="50">Age</th>
+        <th th:width="150">Email</th>
+        <th th:width="50">Edit</th>
+        <th th:width="50">Delete</th>
+    </tr>
+    <tr th:each="user : ${users}">
+
+        <td th:text="${users.get(users)}"></td>
+
+
+        <!--        <td><a th:href="@{/user/{id}(id=${user.id})}" th:text="${user.getId()}">user</a></td>-->
+        <!--        <td><a th:href="@{/user/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a></td>-->
+        <!--        <td><a th:href="@{/user/{id}(id=${user.getId()})}" th:text="${user.getLastName()}">user</a></td>-->
+        <!--        <td><a th:href="@{/user/{id}(id=${user.getId()})}" th:text="${user.getAge()}">user</a></td>-->
+        <td>
+            <!--            <form th:action="@{'edit/' + ${users.userId}}">-->
+            <!--                <input type="submit" class="buttonEdit" value="Edit"/>-->
+            </form>
+        </td>
+        <td>
+            <!--            <form th:method="DELETE" th:action="@{'delete/' + ${users.userId}}">-->
+            <!--                <input type="submit" class="buttonDelete" value="Delete"/>-->
+            <!--            </form>-->
+        </td>
+    </tr>
+</table>
+</body>
+</html>

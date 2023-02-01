@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3" xmlns:h2th="http://java.sun.com/JSP/Page">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<h1>User, welcome spring boot security page!</h1>
+
+
+
+<table border="1">
+    <tr>
+        <th>email</th>
+        <th>name</th>
+
+        <th>age</th>
+        <th>edit</th>
+    </tr>
+    <tr>
+
+<!--        <td th:id="${user.getId()}">Id</td>-->
+<!--        <td th:text="${user.getId()}">Name</td>-->
+
+<!--        <td th:text="${user.getAge()}">Age</td>-->
+        <td><a style="color: orange" th:href="@{/update/{id}(id =${user})}">edit</a></td>
+
+    </tr>
+
+    <br/>
+        <div sec:authorize="isAuthenticated()">
+            Hello! You Email- <span sec:authentication="name"></span></div>
+        <br/>
+
+    <button onclick="window.location.href = '/';">index</button>
+</table>
+</form>
+</body>
+</html>
